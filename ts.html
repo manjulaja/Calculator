@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Salary Calculator</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    body {
+      padding: 20px;
+    }
+    .tab-pane {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Employee Salary Calculator</h1>
+
+  <ul class="nav nav-tabs" id="employee-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" id="employee1-tab" data-toggle="tab" href="#employee1">Employee 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="employee2-tab" data-toggle="tab" href="#employee2">Employee 2</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="employee3-tab" data-toggle="tab" href="#employee3">Employee 3</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="employee4-tab" data-toggle="tab" href="#employee4">Employee 4</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="employee5-tab" data-toggle="tab" href="#employee5">Employee 5</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="employee1">
+      <div class="form-group">
+        <label for="employee1-type">Employee Type:</label>
+        <select id="employee1-type" class="form-control">
+          <option value="3500">Category A (Pay: 3500)</option>
+          <option value="2500">Category B (Pay: 2500)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="employee1-overtime">Overtime Hours:</label>
+        <input type="number" id="employee1-overtime" class="form-control" value="0">
+      </div>
+
+      <div class="form-group">
+        <label for="employee1-days">Number of Days Worked:</label>
+        <input type="number" id="employee1-days" class="form-control" value="1">
+      </div>
+
+      <button type="button" onclick="calculateSalary('employee1')" class="btn btn-primary">Calculate</button>
+
+      <div id="employee1-result" class="mt-4"></div>
+    </div>
+
+    <div class="tab-pane fade" id="employee2">
+      <div class="form-group">
+        <label for="employee2-type">Employee Type:</label>
+        <select id="employee2-type" class="form-control">
+          <option value="3500">Category A (Pay: 3500)</option>
+          <option value="2500">Category B (Pay: 2500)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="employee2-overtime">Overtime Hours:</label>
+        <input type="number" id="employee2-overtime" class="form-control" value="0">
+      </div>
+
+      <div class="form-group">
+        <label for="employee2-days">Number of Days Worked:</label>
+        <input type="number" id="employee2-days" class="form-control" value="1">
+      </div>
+
+      <button type="button" onclick="calculateSalary('employee2')" class="btn btn-primary">Calculate</button>
+
+      <div id="employee2-result" class="mt-4"></div>
+    </div>
+
+    <div class="tab-pane fade" id="employee3">
+      <div class="form-group">
+        <label for="employee3-type">Employee Type:</label>
+        <select id="employee3-type" class="form-control">
+          <option value="3500">Category A (Pay: 3500)</option>
+          <option value="2500">Category B (Pay: 2500)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="employee3-overtime">Overtime Hours:</label>
+        <input type="number" id="employee3-overtime" class="form-control" value="0">
+      </div>
+
+      <div class="form-group">
+        <label for="employee3-days">Number of Days Worked:</label>
+        <input type="number" id="employee3-days" class="form-control" value="1">
+      </div>
+
+      <button type="button" onclick="calculateSalary('employee3')" class="btn btn-primary">Calculate</button>
+
+      <div id="employee3-result" class="mt-4"></div>
+    </div>
+
+    <div class="tab-pane fade" id="employee4">
+      <div class="form-group">
+        <label for="employee4-type">Employee Type:</label>
+        <select id="employee4-type" class="form-control">
+          <option value="3500">Category A (Pay: 3500)</option>
+          <option value="2500">Category B (Pay: 2500)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="employee4-overtime">Overtime Hours:</label>
+        <input type="number" id="employee4-overtime" class="form-control" value="0">
+      </div>
+
+      <div class="form-group">
+        <label for="employee4-days">Number of Days Worked:</label>
+        <input type="number" id="employee4-days" class="form-control" value="1">
+      </div>
+
+      <button type="button" onclick="calculateSalary('employee4')" class="btn btn-primary">Calculate</button>
+
+      <div id="employee4-result" class="mt-4"></div>
+    </div>
+
+    <div class="tab-pane fade" id="employee5">
+      <div class="form-group">
+        <label for="employee5-type">Employee Type:</label>
+        <select id="employee5-type" class="form-control">
+          <option value="3500">Category A (Pay: 3500)</option>
+          <option value="2500">Category B (Pay: 2500)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="employee5-overtime">Overtime Hours:</label>
+        <input type="number" id="employee5-overtime" class="form-control" value="0">
+      </div>
+
+      <div class="form-group">
+        <label for="employee5-days">Number of Days Worked:</label>
+        <input type="number" id="employee5-days" class="form-control" value="1">
+      </div>
+
+      <button type="button" onclick="calculateSalary('employee5')" class="btn btn-primary">Calculate</button>
+
+      <div id="employee5-result" class="mt-4"></div>
+    </div>
+  </div>
+
+  <h3 class="mt-4">Total Salary for All Employees:</h3>
+  <div id="total-salary" class="mt-2"></div>
+
+  <script>
+    function calculateSalary(employeeId) {
+      var employeeType = document.getElementById(employeeId + "-type").value;
+      var overtimeHours = parseInt(document.getElementById(employeeId + "-overtime").value);
+      var numDays = parseInt(document.getElementById(employeeId + "-days").value);
+
+      var dailyPay = employeeType / 8;
+      var overtimePay = overtimeHours * dailyPay;
+      var baseSalary = employeeType * numDays;
+      var totalSalary = baseSalary + overtimePay;
+
+      document.getElementById(employeeId + "-result").innerHTML = "Total Salary: " + totalSalary;
+
+      // Calculate total salary for all employees
+      var total = 0;
+      for (var i = 1; i <= 5; i++) {
+        var type = document.getElementById("employee" + i + "-type").value;
+        var overtime = parseInt(document.getElementById("employee" + i + "-overtime").value);
+        var days = parseInt(document.getElementById("employee" + i + "-days").value);
+        var dailyPayTotal = type / 8;
+        var overtimePayTotal = overtime * dailyPayTotal;
+        var baseSalaryTotal = type * days;
+        var employeeTotalSalary = baseSalaryTotal + overtimePayTotal;
+        total += employeeTotalSalary;
+      }
+
+      document.getElementById("total-salary").innerHTML = "Total Salary for All Employees: " + total;
+    }
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
